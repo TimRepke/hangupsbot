@@ -1,7 +1,11 @@
-HangupsBot
+MensaHangupsBot
 ==========
 
-Bot for Google Hangouts
+MensaBot for Google Hangouts
+
+Currently it's not very dynamic... Only working for "Mensa Oase" in Adlershof, Berlin (and commands in German).
+
+Pro tip: its cool to set an alias for `/mensa`.
 
 Requirements
 ------------
