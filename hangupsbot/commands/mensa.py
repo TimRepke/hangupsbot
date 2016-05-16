@@ -38,9 +38,10 @@ def get_url(args):
     
     days = ['montag', 'dienstag', 'mittwoch', 'donnerstag', 'freitag']
     inter = list(set(days).intersection(lc_args))
-    if len(inter)>0 and days.index(inter[0]) > dow:
+    if len(inter)>0:
         fixer = 0 if datetime.datetime.now().hour <= 15 else 1
-        return baseurl + '0' + str(days.index(inter[0]) - dow - fixer) + '.html'
+        flippy = 1 if days.index(inter[0]) >= dow else -1
+        return baseurl + '0' + str(days.index(inter[0]) - (flippy*dow) - fixer) + '.html'
     
     return baseurl + 'index.html' 
 
