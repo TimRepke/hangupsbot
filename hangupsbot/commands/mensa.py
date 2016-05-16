@@ -39,8 +39,8 @@ def get_url(args):
     
     days = ['montag', 'dienstag', 'mittwoch', 'donnerstag', 'freitag']
     inter = list(set(days).intersection(lc_args))
-    dayind = days.index(inter[0])
     if len(inter)>0:
+        dayind = days.index(inter[0])
         shifter = 0 if dayshift else 1
         if dayind > dow:
             return baseurl + '0' + str(dayind - dow - shifter) + '.html'
