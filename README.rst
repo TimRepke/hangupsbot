@@ -9,6 +9,18 @@ Currently it's not very dynamic... Only working for "Mensa Oase" in Adlershof, B
 
 Pro tip: its cool to set an alias for `/mensa`.
 
+
+Install
+-----------
+
+Simply run
+
+``
+pip3 install git+git://github.com/TimRepke/hangupsbot.git@master
+``
+
+And copy the config file somewhere.
+
 Requirements
 ------------
 
