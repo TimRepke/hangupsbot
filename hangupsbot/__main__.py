@@ -206,6 +206,7 @@ class HangupsBot:
     def _on_disconnect(self):
         """Handle disconnecting"""
         print(_('Connection lost!'))
+        self._client.connect()
 
 
 def main():
