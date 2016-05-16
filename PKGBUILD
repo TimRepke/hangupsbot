@@ -1,14 +1,14 @@
 # Maintainer: Michal Krenek (Mikos) <m.krenek@gmail.com>
-pkgname=hangupsbot
-pkgver=1.7.1
+pkgname=mensahangupsbot
+pkgver=0.2
 pkgrel=1
-pkgdesc="Bot for Google Hangouts"
+pkgdesc="MensaBot for Google Hangouts"
 arch=('any')
-url="https://github.com/xmikos/hangupsbot"
+url="https://github.com/TimRepke/hangupsbot"
 license=('GPL3')
-depends=('hangups-git' 'python-appdirs')
+depends=('hangups-git' 'python-appdirs', 'beautifulsoup4')
 makedepends=('python-setuptools')
-source=(https://github.com/xmikos/hangupsbot/archive/v$pkgver.tar.gz)
+source=(https://github.com/TimRepke/hangupsbot/archive/v$pkgver.tar.gz)
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
