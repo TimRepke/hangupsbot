@@ -29,19 +29,23 @@ def get_url(args):
     baseurl = 'http://www.studentenwerk-berlin.de/mensen/speiseplan/hu_adlershof/'
     dow = datetime.datetime.today().weekday()
     lc_args = [a.lower() for a in args]
+    dayshift = datetime.datetime.now().hour <= 15
 
     if 'morgen' in lc_args: 
-        if datetime.datetime.now().hour <= 15:
+        if dayshift:
             return baseurl + '01.html'
         else:
             return baseurl + '00.html'
     
     days = ['montag', 'dienstag', 'mittwoch', 'donnerstag', 'freitag']
     inter = list(set(days).intersection(lc_args))
+    dayind = days.index(inter[0])
     if len(inter)>0:
-        fixer = 0 if datetime.datetime.now().hour <= 15 else 1
-        flippy = 1 if days.index(inter[0]) >= dow else -1
-        return baseurl + '0' + str(days.index(inter[0]) - (flippy*dow) - fixer) + '.html'
+        shifter = 0 if dayshift else 1
+        if dayind > dow:
+            return baseurl + '0' + str(dayind - dow - shifter) + '.html'
+        else:
+            return baseurl + '0' + str(5 - (dayind - dow) - shifter) + '.html'
     
     return baseurl + 'index.html' 
 
