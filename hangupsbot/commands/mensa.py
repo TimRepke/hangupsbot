@@ -30,7 +30,7 @@ def get_url(args):
     dow = datetime.datetime.today().weekday()
     lc_args = [a.lower() for a in args]
 
-    if 'morgen' in lc_args 
+    if 'morgen' in lc_args: 
         if datetime.datetime.now().hour <= 15:
             return baseurl + '01.html'
         else:
