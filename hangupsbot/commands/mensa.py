@@ -30,13 +30,17 @@ def get_url(args):
     dow = datetime.datetime.today().weekday()
     lc_args = [a.lower() for a in args]
 
-    if 'morgen' in lc_args:
-        return baseurl + '01.html'
+    if 'morgen' in lc_args 
+        if datetime.datetime.now().hour <= 15:
+            return baseurl + '01.html'
+        else:
+            return baseurl + '00.html'
     
     days = ['montag', 'dienstag', 'mittwoch', 'donnerstag', 'freitag']
     inter = list(set(days).intersection(lc_args))
     if len(inter)>0 and days.index(inter[0]) > dow:
-        return baseurl + '0' + str(days.index(inter[0]) - dow) + '.html'
+        fixer = 0 if datetime.datetime.now().hour <= 15 else 1
+        return baseurl + '0' + str(days.index(inter[0]) - dow - fixer) + '.html'
     
     return baseurl + 'index.html' 
 
@@ -56,7 +60,7 @@ def dessert(bot, event, *args):
     ).format(get_date(soup), get_foods(soup,'.desserts'))
 
     yield from event.conv.send_message(text_to_segments(text))
-    
+
 
 @command.register
 def aktion(bot, event, *args):
@@ -109,3 +113,9 @@ def essen(bot, event, *args):
     ).format(get_date(soup), get_foods(soup, '.food'), get_foods(soup, '.side_dishes'))
  
     yield from event.conv.send_message(text_to_segments(text))
+
+
+# some aliases
+@command.register
+def nachtisch(bot, event, *args):
+    dessert(bot, event, args)
