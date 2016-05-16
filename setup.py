@@ -7,19 +7,20 @@ from hangupsbot.version import __version__
 
 install_requires = [
     "hangups>=0.3.0",
-    "appdirs"
+    "appdirs",
+    "beautifulsoup4"
 ]
 
 if sys.version_info < (3, 4):
     install_requires.append("asyncio")
 
 setup(
-    name="HangupsBot",
+    name="MensaHangupsBot",
     version=__version__,
-    description="Bot for Google Hangouts",
-    author="Michal Krenek (Mikos)",
-    author_email="m.krenek@gmail.com",
-    url="https://github.com/xmikos/hangupsbot",
+    description="MensaBot for Google Hangouts",
+    author="Tim Repke",
+    author_email="tim@repke.eu",
+    url="https://github.com/TimRepke/hangupsbot",
     license="GNU GPLv3",
     packages=["hangupsbot", "hangupsbot.handlers", "hangupsbot.commands"],
     package_data={

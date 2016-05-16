@@ -3,6 +3,8 @@ MensaHangupsBot
 
 MensaBot for Google Hangouts
 
+This is a fork of HangupsBot (https://github.com/xmikos/hangupsbot)
+
 Currently it's not very dynamic... Only working for "Mensa Oase" in Adlershof, Berlin (and commands in German).
 
 Pro tip: its cool to set an alias for `/mensa`.
@@ -10,10 +12,11 @@ Pro tip: its cool to set an alias for `/mensa`.
 Requirements
 ------------
 
-- Python >= 3.3
+- Python >= 3.3 (tested in 3.4 and 3.5)
 - hangups (https://github.com/tdryer/hangups)
 - appdirs (https://github.com/ActiveState/appdirs)
 - asyncio (https://pypi.python.org/pypi/asyncio) for Python < 3.4
+- BeautifulSoup4
 
 Usage
 -----
