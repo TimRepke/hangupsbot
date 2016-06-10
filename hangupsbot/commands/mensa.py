@@ -7,6 +7,22 @@ from hangupsbot.utils import strip_quotes, text_to_segments
 from hangupsbot.commands import command
 
 
+destructor = {
+    'kartoffeln': 'kartöffels',
+    'Kartoffeln': 'Kartöffels',
+    'Sauce': 'Matsch',
+    'sauce': 'matsch',
+    'pilaw': 'Pilawa',
+    'filet': 'vielé',
+    'gratin': 'grateng',
+    'brei': 'braille',
+    'Kiechererbsen': 'kiechernde Erbsen',
+    'Blumenkohl': 'Helmut Kohl',
+    'Hefering': 'Penisring',
+    'Champignons': 'Champions',
+    'Gegrillt': 'Verkohlt'
+}
+
 # helpful links:
 #   string formatting: https://github.com/tdryer/hangups/blob/master/hangups/message_parser.py#L69
 #   command examples: https://github.com/xmikos/hangupsbot/tree/master/hangupsbot/commands
@@ -15,9 +31,18 @@ def get_soup(url):
     page = requests.get(url)
     return BeautifulSoup(page.content, 'html.parser') 
 
+
+def destroy_food(food):
+    for d, n in destructor.items():
+        food.replace(d, n)
+    return food
+
+
 def get_foods(soup, selector):
     food = [''.join(f.find_all(text=True, recursive=False)).strip() for f in soup.select(selector + ' td.mensa_day_speise_name')]
     price = [''.join(f.find_all(text=True, recursive=False)).strip() for f in soup.select(selector + ' td.mensa_day_speise_preis')]
+
+    food = [destroy_food(f) for f in food]
 
     return ''.join(['{} _({} €)_\n'.format(food, price[i][4:8]) for i, food in enumerate(food)])
 
@@ -48,6 +73,13 @@ def get_url(args):
             return baseurl + '0' + str(5 - (dayind - dow) - shifter) + '.html'
     
     return baseurl + 'index.html' 
+
+
+@command.register
+def destruction(bot, event, *args):
+    """Warum ist alles kaputt?
+       Usage: /mensa destruction"""
+    yield from event.conv.send_message(text_to_segments(str(destructor)))
 
 
 @command.register
