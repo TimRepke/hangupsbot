@@ -34,7 +34,7 @@ def get_soup(url):
 
 def destroy_food(food):
     for d, n in destructor.items():
-        food.replace(d, n)
+        food = food.replace(d, n)
     return food
 
 
