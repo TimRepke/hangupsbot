@@ -21,7 +21,8 @@ destructor = {
     'Hefering': 'Penisring',
     'Champignons': 'Champions',
     'Gegrillt': 'Verkohlt',
-    'Reis': 'Reis Ranitzki'
+    'Reis': 'Reis Ranitzki',
+    'creme': 'salbe'
 }
 
 # helpful links:
