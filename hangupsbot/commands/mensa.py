@@ -20,7 +20,8 @@ destructor = {
     'Blumenkohl': 'Helmut Kohl',
     'Hefering': 'Penisring',
     'Champignons': 'Champions',
-    'Gegrillt': 'Verkohlt'
+    'Gegrillt': 'Verkohlt',
+    'Reis': 'Reis Ranitzki'
 }
 
 # helpful links:
