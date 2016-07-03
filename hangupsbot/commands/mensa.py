@@ -22,7 +22,9 @@ destructor = {
     'Champignons': 'Champions',
     'Gegrillt': 'Verkohlt',
     'Reis': 'Reis Ranitzki',
-    'creme': 'salbe'
+    'creme': 'salbe',
+    'Kompott': 'Kompost',
+    'Germknödel': 'Darmköttel'
 }
 
 # helpful links:
