@@ -24,7 +24,10 @@ destructor = {
     'Reis': 'Reis Ranitzki',
     'creme': 'salbe',
     'Kompott': 'Kompost',
-    'Germknödel': 'Darmköttel'
+    'Germknödel': 'Darmköttel',
+    'Langkornreis': 'Einhornreis',
+    'Gewürzte': 'Versalzene',
+    'Hähnchen': 'Fähnchen'
 }
 
 # helpful links:
