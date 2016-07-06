@@ -6,8 +6,33 @@ from hangups import hangouts_pb2
 from hangupsbot.utils import strip_quotes, text_to_segments
 from hangupsbot.commands import command
 
+# nice emoji lookup table:
+# https://github.com/carpedm20/emoji/blob/master/emoji/unicode_codes.py
+# http://www.emoji-cheat-sheet.com/
+
 emoji = {
-    "cow2": "\U0001F404"
+    'cow2': '\U0001F404',
+    'hatched_chick': '\U0001F425',
+    'hatching_chick': '\U0001F423',
+    'baby_chick': '\U0001F424',
+    'chicken': '\U0001F414',
+    'front-facing_baby_chick': '\U0001F425',
+    'mushroom': '\U0001F344',
+    'poultry_leg': '\U0001F357', # hähnchenkeule
+    'meat_on_bone': '\U0001F356',
+    'rice': '\U0001F35A',
+    'egg': '\U0001F373',
+    'ramen': '\U0001F35C', #noodles
+    'pizza': '\U0001F355',
+    'french_fries': '\U0001F35F',
+    'fishing_pole_and_fish': '\U0001F3A3',
+    'fish': '\U0001F41F',
+    'rooster': '\U0001F413',
+    'pig2': '\U0001F416',
+    'pig': '\U0001F437',
+    'pig_nose': '\U0001F43D',
+    'goat': '\U0001F410',
+    'spaghetti': '\U0001F35D'
 }
 
 destructor = {
@@ -30,7 +55,15 @@ destructor = {
     'Germknödel': 'Darmköttel',
     'Langkornreis': 'Einhornreis',
     'Gewürzte': 'Versalzene',
-    'Hähnchen': 'Fähnchen'
+    'Hähnchen': emoji['hatching_chick'],
+    'Eier': emoji['egg'],
+    'Schwein': emoji['pig'],
+    'Rind': emoji['cow2'],
+    'keule': emoji['poultry_leg'],
+    'Pilz': emoji['mushroom'],
+    'Seelachs': emoji['fish'],
+    'Forelle': emoji['fishing_pole_and_fish'],
+    'Pizza': emoji['pizza']
 }
 
 # helpful links:
