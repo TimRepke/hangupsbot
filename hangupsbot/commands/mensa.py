@@ -6,6 +6,9 @@ from hangups import hangouts_pb2
 from hangupsbot.utils import strip_quotes, text_to_segments
 from hangupsbot.commands import command
 
+emoji = {
+    "cow2": "\U0001F404"
+}
 
 destructor = {
     'kartoffeln': 'kartöffels',
@@ -102,6 +105,13 @@ def dessert(bot, event, *args):
        '**Desserts**\n'
        '{}'
     ).format(get_date(soup), get_foods(soup,'.desserts'))
+
+    yield from event.conv.send_message(text_to_segments(text))
+
+
+@command.register
+def emo(bot, event, *args):
+    text = emoji['cow2']
 
     yield from event.conv.send_message(text_to_segments(text))
 
