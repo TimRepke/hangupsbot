@@ -55,6 +55,7 @@ destructor = {
     'Germknödel': 'Darmköttel',
     'Langkornreis': 'Einhornreis',
     'Gewürzte': 'Versalzene',
+    'Soja': 'Sonja',
     'Hähnchen': emoji['hatching_chick'],
     'Eier': emoji['egg'],
     'Schwein': emoji['pig'],
