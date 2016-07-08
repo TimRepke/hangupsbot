@@ -32,7 +32,8 @@ emoji = {
     'pig': '\U0001F437',
     'pig_nose': '\U0001F43D',
     'goat': '\U0001F410',
-    'spaghetti': '\U0001F35D'
+    'spaghetti': '\U0001F35D',
+    'hamburger': '\U0001F354'
 }
 
 destructor = {
@@ -64,7 +65,10 @@ destructor = {
     'Pilz': emoji['mushroom'],
     'Seelachs': emoji['fish'],
     'Forelle': emoji['fishing_pole_and_fish'],
-    'Pizza': emoji['pizza']
+    'Pizza': emoji['pizza'],
+    'Hamburger': emoji['hamburger'],
+    'Pommes': emoji['french_fries'],
+    'nudeln': emoji['ramen']
 }
 
 # helpful links:

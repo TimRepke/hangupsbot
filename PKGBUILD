@@ -1,6 +1,6 @@
 # Maintainer: Michal Krenek (Mikos) <m.krenek@gmail.com>
 pkgname=mensahangupsbot
-pkgver=0.2.7.1
+pkgver=0.2.7.2
 pkgrel=1
 pkgdesc="MensaBot for Google Hangouts"
 arch=('any')
